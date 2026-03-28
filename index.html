@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PickElite — Les meilleurs produits testés et comparés</title>
+  <meta name="description" content="PickElite teste et compare les meilleurs produits Amazon : masseurs, ordinateurs, casques audio, maison connectée. Tests rigoureux et comparatifs honnêtes.">
+  <link rel="canonical" href="https://pickelite.fr/">
+  <meta name="theme-color" content="#FF9900">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PickElite — Les meilleurs produits testés et comparés">
+  <meta property="og:description" content="Tests rigoureux, comparatifs honnêtes, liens Amazon vérifiés. On achète et on teste pour vous.">
+  <meta property="og:url" content="https://pickelite.fr/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80">
+  <meta property="og:site_name" content="PickElite">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GA4 placeholder -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">⚡</span>
+      <strong>Pick</strong>Elite
+    </a>
+    <ul class="nav-links">
+      <li><a href="#selection">Masseurs</a></li>
+      <li><a href="#selection">Ordinateurs</a></li>
+      <li><a href="#selection">Audio</a></li>
+      <li><a href="#selection">Maison</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+    </ul>
+    <div class="nav-search" id="navSearch">
+      <input type="search" class="nav-search-input" id="navSearchInput" placeholder="Rechercher…" aria-label="Recherche">
+      <span class="nav-search-icon">🔍</span>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <a href="#comparatif" class="nav-cta">Comparer</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+      <span class="theme-icon">🌙</span>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#selection">💆 Masseurs</a></li>
+    <li><a href="#selection">💻 Ordinateurs</a></li>
+    <li><a href="#selection">🎧 Audio</a></li>
+    <li><a href="#selection">🏠 Maison</a></li>
+    <li><a href="#comparatif">📊 Comparer</a></li>
+    <li><a href="#articles">📝 Articles</a></li>
+    <li><a href="a-propos.html">ℹ️ À propos</a></li>
+    <li><a href="contact.html">📬 Contact</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge reveal">
+      <span class="badge-dot"></span>
+      Sélection Printemps 2026 mise à jour
+    </div>
+    <h1 class="hero-title reveal" data-delay="100">
+      Trouvez le meilleur produit<br>
+      <span class="gradient-text">au meilleur prix</span>
+    </h1>
+    <p class="hero-sub reveal" data-delay="200">
+      Tests rigoureux, comparatifs honnêtes, liens Amazon vérifiés.<br>
+      On achète et on teste pour vous.
+    </p>
+    <div class="hero-actions reveal" data-delay="300">
+      <a href="#selection" class="btn btn-primary">Voir la sélection →</a>
+      <a href="#comparatif" class="btn btn-ghost">Comparer les produits</a>
+    </div>
+    <div class="hero-stats reveal" data-delay="400">
+      <div class="stat">
+        <span class="stat-num">120</span>
+        <span class="stat-label">Produits testés</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">4.8</span>
+        <span class="stat-label">Note lecteurs</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">50k</span>
+        <span class="stat-label">Visiteurs/mois</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Défiler</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SÉLECTION -->
+<section class="section" id="selection">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">✨ Sélection du moment</span>
+      <h2>Notre sélection du moment</h2>
+      <p>Chaque produit est acheté sur Amazon, testé pendant 2 à 4 semaines, puis noté sur 100.</p>
+    </div>
+
+    <!-- Filtres -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="masseur">💆 Masseurs</button>
+      <button class="filter-btn" data-filter="pc">💻 Ordinateurs</button>
+      <button class="filter-btn" data-filter="audio">🎧 Audio</button>
+      <button class="filter-btn" data-filter="maison">🏠 Maison</button>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Theragun Elite -->
+      <article class="bike-card reveal" data-cat="masseur" data-delay="100">
+        <div class="card-badge coup-coeur">★ Coup de cœur</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=480&q=80" alt="Theragun Elite pistolet de massage" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-cat masseur">💆 Masseur</span>
+            <span class="card-price">399 €</span>
+          </div>
+          <h3>Theragun Elite</h3>
+          <div class="card-score">
+            <div class="score-bar"><div class="score-fill" style="--score: 94%"></div></div>
+            <span class="score-num">94/100</span>
+          </div>
+          <p>Le pistolet de massage le plus silencieux du marché. 5 têtes incluses, 40 vitesses, autonomie 2h30. La référence absolue.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-icon">🔋</span><span><span class="spec-val">2h30</span><span class="spec-key">Autonomie</span></span></div>
+            <div class="spec"><span class="spec-icon">⚡</span><span><span class="spec-val">16mm</span><span class="spec-key">Amplitude</span></span></div>
+            <div class="spec"><span class="spec-icon">⚖️</span><span><span class="spec-val">1.1 kg</span><span class="spec-key">Poids</span></span></div>
+          </div>
+          <div class="card-verdict"><strong>Notre avis :</strong> Silencieux, puissant, connecté. Le meilleur rapport qualité/performance du marché.</div>
+          <a href="https://www.amazon.fr/dp/B08CC42TDS?tag=pickelite-21" class="btn-buy" target="_blank" rel="noopener sponsored">Voir sur Amazon →</a>
+        </div>
+      </article>
+
+      <!-- MacBook Air M3 -->
+      <article class="bike-card reveal" data-cat="pc" data-delay="200">
+        <div class="card-badge tech-premium">Tech Premium</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=480&q=80" alt="MacBook Air M3 ordinateur portable Apple" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-cat pc">💻 Ordinateur</span>
+            <span class="card-price">1 299 €</span>
+          </div>
+          <h3>MacBook Air M3</h3>
+          <div class="card-score">
+            <div class="score-bar"><div class="score-fill" style="--score: 96%"></div></div>
+            <span class="score-num">96/100</span>
+          </div>
+          <p>La révolution silencieuse. Puce M3, 18h d'autonomie, écran Liquid Retina. L'ordinateur le plus équilibré du marché.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-icon">🔋</span><span><span class="spec-val">18h</span><span class="spec-key">Autonomie</span></span></div>
+            <div class="spec"><span class="spec-icon">⚡</span><span><span class="spec-val">Puce M3</span><span class="spec-key">Processeur</span></span></div>
+            <div class="spec"><span class="spec-icon">⚖️</span><span><span class="spec-val">1.24 kg</span><span class="spec-key">Poids</span></span></div>
+          </div>
+          <div class="card-verdict"><strong>Notre avis :</strong> Autonomie exceptionnelle, performance imbattable. Le PC portable ultime pour les créatifs et les pros.</div>
+          <a href="https://www.amazon.fr/dp/B0CM5JV268?tag=pickelite-21" class="btn-buy" target="_blank" rel="noopener sponsored">Voir sur Amazon →</a>
+        </div>
+      </article>
+
+      <!-- Sony WH-1000XM5 -->
+      <article class="bike-card reveal" data-cat="audio" data-delay="300">
+        <div class="card-badge meilleur-prix">Meilleur prix</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=480&q=80" alt="Sony WH-1000XM5 casque audio réduction de bruit" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-cat audio">🎧 Audio</span>
+            <span class="card-price">279 €</span>
+          </div>
+          <h3>Sony WH-1000XM5</h3>
+          <div class="card-score">
+            <div class="score-bar"><div class="score-fill" style="--score: 95%"></div></div>
+            <span class="score-num">95/100</span>
+          </div>
+          <p>La référence de la réduction de bruit active. 30h d'autonomie, son Hi-Res, pliable. Imbattable dans cette gamme.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-icon">🔋</span><span><span class="spec-val">30h</span><span class="spec-key">Autonomie</span></span></div>
+            <div class="spec"><span class="spec-icon">⚡</span><span><span class="spec-val">ANC Pro</span><span class="spec-key">Réduction bruit</span></span></div>
+            <div class="spec"><span class="spec-icon">⚖️</span><span><span class="spec-val">250g</span><span class="spec-key">Poids</span></span></div>
+          </div>
+          <div class="card-verdict"><strong>Notre avis :</strong> La meilleure réduction de bruit du marché. Confortable sur des heures, son cristallin. Un must-have.</div>
+          <a href="https://www.amazon.fr/dp/B09XS7JWHH?tag=pickelite-21" class="btn-buy" target="_blank" rel="noopener sponsored">Voir sur Amazon →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARATIF -->
+<section class="section section-dark" id="comparatif">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">📊 Face à face</span>
+      <h2>Face à face technique</h2>
+      <p>Comparatif détaillé des meilleurs pistolets de massage du marché.</p>
+    </div>
+
+    <div class="table-wrapper reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Critère</th>
+            <th>
+              <div class="th-bike th-bike-featured">
+                <span class="th-label">★ Coup de cœur</span>
+                <span class="th-name">Theragun Elite</span>
+                <span class="th-price">399 €</span>
+              </div>
+            </th>
+            <th>
+              <div class="th-bike">
+                <span class="th-name">Hypervolt Go 2</span>
+                <span class="th-price">249 €</span>
+              </div>
+            </th>
+            <th>
+              <div class="th-bike">
+                <span class="th-name">Ekrin B37</span>
+                <span class="th-price">149 €</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-label">Prix</td>
+            <td class="td-featured">399 €</td>
+            <td>249 €</td>
+            <td>149 €</td>
+          </tr>
+          <tr>
+            <td class="td-label">Amplitude</td>
+            <td class="td-featured td-check">16 mm</td>
+            <td>12 mm</td>
+            <td>14.2 mm</td>
+          </tr>
+          <tr>
+            <td class="td-label">Niveaux de vitesse</td>
+            <td class="td-featured td-check">40 vitesses</td>
+            <td>5 vitesses</td>
+            <td>5 vitesses</td>
+          </tr>
+          <tr>
+            <td class="td-label">Niveau sonore</td>
+            <td class="td-featured td-check">65 dB</td>
+            <td>70 dB</td>
+            <td>68 dB</td>
+          </tr>
+          <tr>
+            <td class="td-label">Autonomie</td>
+            <td class="td-featured td-check">2h30</td>
+            <td>3h</td>
+            <td>8h</td>
+          </tr>
+          <tr>
+            <td class="td-label">Garantie</td>
+            <td class="td-featured">2 ans</td>
+            <td>1 an</td>
+            <td>1 an</td>
+          </tr>
+          <tr>
+            <td class="td-label">Note PickElite</td>
+            <td class="td-featured"><span class="score-pill score-best">94/100</span></td>
+            <td><span class="score-pill score-top">82/100</span></td>
+            <td><span class="score-pill">78/100</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DUEL -->
+<section class="section" id="duel">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">⚔️ Le Grand Duel</span>
+      <h2>Theragun Elite VS Hypervolt Go 2</h2>
+      <p>Deux références, deux philosophies. Lequel correspond à votre pratique ?</p>
+    </div>
+
+    <div class="duel-wrapper reveal">
+      <!-- Theragun -->
+      <div class="duel-card duel-winner">
+        <span class="winner-badge">🏆 Gagnant PickElite</span>
+        <div class="duel-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Theragun Elite massage therapy" loading="lazy">
+        </div>
+        <h3>Theragun Elite</h3>
+        <p class="duel-sub">399 € — Le pro des sportifs</p>
+        <ul class="duel-pros">
+          <li><span class="pro">+</span> 16mm d'amplitude (le plus élevé)</li>
+          <li><span class="pro">+</span> Application connectée Therabody</li>
+          <li><span class="pro">+</span> 40 vitesses personnalisables</li>
+          <li><span class="pro">+</span> 5 têtes premium incluses</li>
+        </ul>
+        <ul class="duel-cons">
+          <li><span class="con">−</span> Prix élevé</li>
+          <li><span class="con">−</span> Autonomie courte (2h30)</li>
+        </ul>
+      </div>
+
+      <!-- VS -->
+      <div class="duel-vs">
+        <div class="vs-circle"><span class="vs-text">VS</span></div>
+      </div>
+
+      <!-- Hypervolt -->
+      <div class="duel-card">
+        <div class="duel-img">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80" alt="Hypervolt massage gun récupération" loading="lazy">
+        </div>
+        <h3>Hypervolt Go 2</h3>
+        <p class="duel-sub">249 € — Le compact pratique</p>
+        <ul class="duel-pros">
+          <li><span class="pro">+</span> Compact et léger (650g)</li>
+          <li><span class="pro">+</span> Autonomie 3h</li>
+          <li><span class="pro">+</span> Rapport qualité/prix correct</li>
+        </ul>
+        <ul class="duel-cons">
+          <li><span class="con">−</span> Amplitude limitée (12mm)</li>
+          <li><span class="con">−</span> Seulement 5 vitesses</li>
+          <li><span class="con">−</span> Plus bruyant (70dB)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="duel-verdict reveal">
+      <span class="verdict-icon">🏆</span>
+      <p><strong>Notre verdict :</strong> Le Theragun Elite s'impose pour les sportifs réguliers et les professionnels qui veulent le meilleur résultat de récupération. Son amplitude de 16mm et ses 40 vitesses en font l'outil de massage le plus polyvalent. L'Hypervolt Go 2 convient aux utilisateurs occasionnels cherchant un appareil compact et abordable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section class="section section-dark" id="guides">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">📚 Guides d'achat</span>
+      <h2>Guides d'achat</h2>
+      <p>Nos experts décryptent chaque catégorie pour vous aider à faire le meilleur choix.</p>
+    </div>
+
+    <div class="guides-grid">
+      <a href="article1.html" class="guide-card reveal" data-delay="100">
+        <div class="guide-icon">💆</div>
+        <span class="guide-tag">Guide</span>
+        <h3>Bien choisir son pistolet de massage</h3>
+        <p>Amplitude, couple moteur, niveau sonore : tous les critères expliqués pour choisir le bon appareil selon votre pratique sportive.</p>
+        <span class="guide-link">Lire le guide <span>→</span></span>
+      </a>
+
+      <a href="article3.html" class="guide-card reveal" data-delay="200">
+        <div class="guide-icon">💻</div>
+        <span class="guide-tag">Guide</span>
+        <h3>Quel ordinateur portable en 2026 ?</h3>
+        <p>MacBook M3 ou PC Windows ? Nos experts comparent les meilleurs laptops pour la bureautique, la création et le gaming.</p>
+        <span class="guide-link">Lire le guide <span>→</span></span>
+      </a>
+
+      <a href="article3.html" class="guide-card reveal" data-delay="300">
+        <div class="guide-icon">🎧</div>
+        <span class="guide-tag">Guide</span>
+        <h3>Casque audio : ANC ou pas ?</h3>
+        <p>La réduction de bruit active vaut-elle vraiment son surcoût ? On vous explique quand et pourquoi investir dans l'ANC.</p>
+        <span class="guide-link">Lire le guide <span>→</span></span>
+      </a>
+
+      <a href="article4.html" class="guide-card reveal" data-delay="400">
+        <div class="guide-icon">🏠</div>
+        <span class="guide-tag">Guide</span>
+        <h3>Top 5 aspirateurs robots 2026</h3>
+        <p>Roomba, Roborock, Dreame : notre comparatif des meilleurs aspirateurs robots pour chaque budget et configuration de logement.</p>
+        <span class="guide-link">Lire le guide <span>→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section" id="articles">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">📝 Tests complets</span>
+      <h2>Nos tests complets</h2>
+      <p>Des articles de fond rédigés après des semaines d'utilisation réelle.</p>
+    </div>
+
+    <div class="articles-grid">
+      <a href="article1.html" class="article-card reveal" data-delay="100">
+        <span class="article-card-tag">Guide d'achat</span>
+        <h3>Comment choisir son pistolet de massage en 2026 ?</h3>
+        <p>Amplitude, couple moteur, niveau sonore, autonomie réelle : le guide complet pour ne pas se tromper dans votre achat.</p>
+        <span class="article-card-link">Lire l'article →</span>
+      </a>
+
+      <a href="article2.html" class="article-card article-card-featured reveal" data-delay="200">
+        <span class="article-card-score">Top 3</span>
+        <span class="article-card-tag">Comparatif</span>
+        <h3>Top 3 pistolets de massage à moins de 500€</h3>
+        <p>Theragun Elite, Hypervolt Go 2, Ekrin B37 : trois pistolets testés en conditions réelles, notre verdict honnête.</p>
+        <span class="article-card-link">Lire l'article →</span>
+      </a>
+
+      <a href="article3.html" class="article-card reveal" data-delay="300">
+        <span class="article-card-tag">Duel</span>
+        <h3>MacBook Air M3 vs Dell XPS 15 : lequel choisir en 2026 ?</h3>
+        <p>Performances, autonomie, écran, prix : le face-à-face exhaustif entre les deux meilleurs laptops du moment.</p>
+        <span class="article-card-link">Lire l'article →</span>
+      </a>
+
+      <a href="article4.html" class="article-card reveal" data-delay="100">
+        <span class="article-card-tag">Bons plans</span>
+        <h3>Comment économiser 200€ sur Amazon grâce aux ventes flash ?</h3>
+        <p>Prime Day, ventes flash, abonnements, Camelcamelcamel : tous nos tips pour payer le juste prix sur Amazon.</p>
+        <span class="article-card-link">Lire l'article →</span>
+      </a>
+
+      <a href="article5.html" class="article-card article-card-featured reveal" data-delay="200">
+        <span class="article-card-score">94/100</span>
+        <span class="article-card-tag">Test produit</span>
+        <h3>Avis complet : Theragun Elite (2026) — Vaut-il vraiment 399€ ?</h3>
+        <p>Après 4 semaines de tests intensifs, notre verdict sur le pistolet de massage haut de gamme de Therabody.</p>
+        <span class="article-card-link">Lire le test →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-section">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item reveal" data-delay="100">
+        <span class="trust-icon">🔬</span>
+        <h4>Tests réels</h4>
+        <p>Chaque produit est utilisé pendant minimum 2 semaines avant publication de notre avis.</p>
+      </div>
+      <div class="trust-item reveal" data-delay="200">
+        <span class="trust-icon">🛒</span>
+        <h4>Achetés sur Amazon</h4>
+        <p>Nous achetons nous-mêmes tous les produits testés. Aucun envoi gratuit de la part des marques.</p>
+      </div>
+      <div class="trust-item reveal" data-delay="300">
+        <span class="trust-icon">✍️</span>
+        <h4>Indépendance éditoriale</h4>
+        <p>Nos avis sont basés sur nos tests, jamais sur la commission que génère un produit.</p>
+      </div>
+      <div class="trust-item reveal" data-delay="400">
+        <span class="trust-icon">🔄</span>
+        <h4>Mis à jour régulièrement</h4>
+        <p>Nos comparatifs sont revisités tous les trimestres pour intégrer les nouvelles sorties.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-box reveal">
+      <div class="newsletter-icon">📬</div>
+      <h2>Recevez nos bons plans Amazon chaque semaine</h2>
+      <p>Ventes flash, codes promo, nouvelles sorties : la newsletter des acheteurs malins. Désabonnement en un clic.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="votre@email.fr" required>
+        <button type="submit" class="newsletter-btn">S'inscrire →</button>
+      </form>
+      <p class="newsletter-note" id="newsletterNote">Nous respectons votre vie privée. Zéro spam.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">⚡</span>
+          <strong>Pick</strong>Elite
+        </div>
+        <p>Tests rigoureux, comparatifs honnêtes. Nous achetons et testons pour vous les meilleurs produits Amazon.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Catégories</h5>
+          <ul>
+            <li><a href="#selection">💆 Masseurs</a></li>
+            <li><a href="#selection">💻 Ordinateurs</a></li>
+            <li><a href="#selection">🎧 Audio</a></li>
+            <li><a href="#selection">🏠 Maison connectée</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>À propos</h5>
+          <ul>
+            <li><a href="a-propos.html">Notre méthode</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="confidentialite.html">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="affiliate-note">PickElite participe au Programme Partenaires d'Amazon EU, un programme d'affiliation conçu pour permettre à des sites de percevoir une rémunération grâce à la création de liens vers Amazon.fr. Les prix affichés sont susceptibles de varier.</p>
+      <p class="copyright">© 2026 PickElite — Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>

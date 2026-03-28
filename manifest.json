@@ -1,0 +1,13 @@
+{
+  "name": "PickElite",
+  "short_name": "PickElite",
+  "description": "Les meilleurs produits testés et comparés — Affiliation Amazon",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0f1a",
+  "theme_color": "#FF9900",
+  "icons": [
+    {"src": "https://placehold.co/192x192/0a0f1a/FF9900?text=PE", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "https://placehold.co/512x512/0a0f1a/FF9900?text=PE", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
