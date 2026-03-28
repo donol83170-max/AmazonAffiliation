@@ -79,11 +79,11 @@ const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('pickelite-theme', theme);
+  localStorage.setItem('pepitech-theme', theme);
   if (themeIcon) themeIcon.textContent = theme === 'light' ? '☀️' : '🌙';
 }
 
-const savedTheme = localStorage.getItem('pickelite-theme') || 'dark';
+const savedTheme = localStorage.getItem('pepitech-theme') || 'dark';
 applyTheme(savedTheme);
 
 if (themeToggle) {
@@ -109,7 +109,7 @@ const searchData = [
   { icon: '📊', title: 'Comparatif masseurs pistolets', url: 'index.html#comparatif' },
   { icon: '⚖️', title: 'Duel Theragun vs Hypervolt', url: 'index.html#duel' },
   { icon: '📬', title: 'Contact', url: 'contact.html' },
-  { icon: 'ℹ️', title: 'À propos de PickElite', url: 'a-propos.html' },
+  { icon: 'ℹ️', title: 'À propos de Pepi'Tech', url: 'a-propos.html' },
 ];
 
 if (searchInput && searchResults) {

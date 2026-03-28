@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pickelite-v1';
+const CACHE_NAME = 'pepitech-v1';
 const ASSETS = [
   '/',
   '/index.html',
