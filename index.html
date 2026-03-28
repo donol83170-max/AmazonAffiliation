@@ -41,10 +41,11 @@
       Pepi'<strong>Tech</strong>
     </a>
     <ul class="nav-links">
-      <li><a href="#selection">Masseurs</a></li>
-      <li><a href="#selection">Ordinateurs</a></li>
-      <li><a href="#selection">Audio</a></li>
-      <li><a href="#selection">Maison</a></li>
+      <li><button class="nav-btn" onclick="navFilter('masseur')">Masseurs</button></li>
+      <li><button class="nav-btn" onclick="navFilter('pc')">Ordinateurs</button></li>
+      <li><button class="nav-btn" onclick="navFilter('audio')">Audio</button></li>
+      <li><button class="nav-btn" onclick="navFilter('maison')">Maison</button></li>
+      <li><button class="nav-btn" onclick="navFilter('jardinage')">Jardinage</button></li>
       <li><a href="a-propos.html">À propos</a></li>
     </ul>
     <div class="nav-search" id="navSearch">
@@ -69,6 +70,7 @@
     <li><a href="#selection">💻 Ordinateurs</a></li>
     <li><a href="#selection">🎧 Audio</a></li>
     <li><a href="#selection">🏠 Maison</a></li>
+    <li><a href="#selection">🌿 Jardinage</a></li>
     <li><a href="#comparatif">📊 Comparer</a></li>
     <li><a href="#articles">📝 Articles</a></li>
     <li><a href="a-propos.html">ℹ️ À propos</a></li>
@@ -130,15 +132,6 @@
       <span class="section-tag">✨ Sélection du moment</span>
       <h2>Notre sélection du moment</h2>
       <p>Chaque produit est acheté sur Amazon, testé pendant 2 à 4 semaines, puis noté sur 100.</p>
-    </div>
-
-    <!-- Filtres -->
-    <div class="filter-bar reveal">
-      <button class="filter-btn active" data-filter="all">Tous</button>
-      <button class="filter-btn" data-filter="masseur">💆 Masseurs</button>
-      <button class="filter-btn" data-filter="pc">💻 Ordinateurs</button>
-      <button class="filter-btn" data-filter="audio">🎧 Audio</button>
-      <button class="filter-btn" data-filter="maison">🏠 Maison</button>
     </div>
 
     <div class="cards-grid">
@@ -221,6 +214,88 @@
           </div>
           <div class="card-verdict"><strong>Notre avis :</strong> La meilleure réduction de bruit du marché. Confortable sur des heures, son cristallin. Un must-have.</div>
           <a href="https://www.amazon.fr/dp/B09XS7JWHH?tag=pepitech-21" class="btn-buy" target="_blank" rel="noopener sponsored">Voir sur Amazon →</a>
+        </div>
+      </article>
+
+
+      <!-- Gardena SILENO life — Robot tondeuse -->
+      <article class="bike-card reveal" data-cat="jardinage" data-delay="0">
+        <div class="card-badge jardinage-badge">🌿 Jardinage</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=480&q=80" alt="Robot tondeuse Gardena SILENO" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-cat jardinage">🌿 Jardinage</span>
+            <span class="card-price">599 €</span>
+          </div>
+          <h3>Gardena SILENO life 750</h3>
+          <div class="card-score">
+            <div class="score-bar"><div class="score-fill" style="--score: 91%"></div></div>
+            <span class="score-num">91/100</span>
+          </div>
+          <p>Le robot tondeuse silencieux qui tond seul jusqu'à 750 m². Installation simple, coupe impeccable, zéro effort. Fonctionne même sous la pluie.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-icon">📐</span><span><span class="spec-val">750 m²</span><span class="spec-key">Surface max</span></span></div>
+            <div class="spec"><span class="spec-icon">🔇</span><span><span class="spec-val">57 dB</span><span class="spec-key">Niveau sonore</span></span></div>
+            <div class="spec"><span class="spec-icon">🔋</span><span><span class="spec-val">65 min</span><span class="spec-key">Autonomie</span></span></div>
+          </div>
+          <div class="card-verdict"><strong>Notre avis :</strong> Le meilleur rapport qualité/prix en robot tondeuse. Silencieux, fiable et vraiment autonome.</div>
+          <a href="https://www.amazon.fr/dp/B07YGL1P5G?tag=pepitech-21" class="btn-buy" target="_blank" rel="noopener sponsored">Voir sur Amazon →</a>
+        </div>
+      </article>
+
+      <!-- Husqvarna TS 342 — Tracteur tondeuse -->
+      <article class="bike-card reveal" data-cat="jardinage" data-delay="100">
+        <div class="card-badge coup-coeur">★ Coup de cœur</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=480&q=80" alt="Tracteur tondeuse Husqvarna" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-cat jardinage">🌿 Jardinage</span>
+            <span class="card-price">2 499 €</span>
+          </div>
+          <h3>Husqvarna Tracteur TS 342</h3>
+          <div class="card-score">
+            <div class="score-bar"><div class="score-fill" style="--score: 94%"></div></div>
+            <span class="score-num">94/100</span>
+          </div>
+          <p>Le tracteur tondeuse qui avale les grandes surfaces. Moteur Briggs & Stratton 12,5 ch, coupe 96 cm, boîte automatique. Parfait pour les jardins jusqu'à 5 000 m².</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-icon">⚡</span><span><span class="spec-val">12,5 ch</span><span class="spec-key">Puissance</span></span></div>
+            <div class="spec"><span class="spec-icon">📏</span><span><span class="spec-val">96 cm</span><span class="spec-key">Largeur coupe</span></span></div>
+            <div class="spec"><span class="spec-icon">📐</span><span><span class="spec-val">5 000 m²</span><span class="spec-key">Surface max</span></span></div>
+          </div>
+          <div class="card-verdict"><strong>Notre avis :</strong> Puissant, confortable et fiable. La référence pour les grands jardins avec relief.</div>
+          <a href="https://www.amazon.fr/s?k=tracteur+tondeuse+husqvarna&tag=pepitech-21" class="btn-buy" target="_blank" rel="noopener sponsored">Voir sur Amazon →</a>
+        </div>
+      </article>
+
+      <!-- STIHL MS 170 — Tronçonneuse -->
+      <article class="bike-card reveal" data-cat="jardinage" data-delay="200">
+        <div class="card-badge budget">Meilleur prix</div>
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=480&q=80" alt="Tronçonneuse STIHL MS 170" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-cat jardinage">🌿 Jardinage</span>
+            <span class="card-price">229 €</span>
+          </div>
+          <h3>STIHL MS 170</h3>
+          <div class="card-score">
+            <div class="score-bar"><div class="score-fill" style="--score: 89%"></div></div>
+            <span class="score-num">89/100</span>
+          </div>
+          <p>La tronçonneuse d'entrée de gamme qui ne se comporte pas comme une. Légère, maniable, idéale pour couper du bois de chauffage et élaguer les arbres jusqu'à 30 cm de diamètre.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-icon">📏</span><span><span class="spec-val">35 cm</span><span class="spec-key">Guide-chaîne</span></span></div>
+            <div class="spec"><span class="spec-icon">⚡</span><span><span class="spec-val">1,2 kW</span><span class="spec-key">Puissance</span></span></div>
+            <div class="spec"><span class="spec-icon">⚖️</span><span><span class="spec-val">3,9 kg</span><span class="spec-key">Poids</span></span></div>
+          </div>
+          <div class="card-verdict"><strong>Notre avis :</strong> La meilleure entrée de gamme. Fiable, légère et suffisante pour 95 % des besoins du jardinier amateur.</div>
+          <a href="https://www.amazon.fr/s?k=stihl+ms+170+tronconneuse&tag=pepitech-21" class="btn-buy" target="_blank" rel="noopener sponsored">Voir sur Amazon →</a>
         </div>
       </article>
 

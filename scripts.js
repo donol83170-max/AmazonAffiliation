@@ -1,20 +1,26 @@
+// Marque le DOM comme JS actif (les reveals ne cachent que si JS tourne)
+document.documentElement.classList.add('js');
+
 // Nav scroll effect
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-});
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
 
 // Burger menu
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
 
-burger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-});
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+}
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -106,10 +112,13 @@ const searchData = [
   { icon: '💆', title: 'Theragun Elite — Sélection', url: 'index.html#selection' },
   { icon: '💻', title: 'MacBook Air M3 — Sélection', url: 'index.html#selection' },
   { icon: '🎧', title: 'Sony WH-1000XM5 — Sélection', url: 'index.html#selection' },
+  { icon: '🌿', title: 'Gardena SILENO life 750 — Robot tondeuse', url: 'index.html#selection' },
+  { icon: '🚜', title: 'Husqvarna Tracteur tondeuse TS 342', url: 'index.html#selection' },
+  { icon: '🪚', title: 'STIHL MS 170 — Tronçonneuse', url: 'index.html#selection' },
   { icon: '📊', title: 'Comparatif masseurs pistolets', url: 'index.html#comparatif' },
   { icon: '⚖️', title: 'Duel Theragun vs Hypervolt', url: 'index.html#duel' },
   { icon: '📬', title: 'Contact', url: 'contact.html' },
-  { icon: 'ℹ️', title: 'À propos de Pepi'Tech', url: 'a-propos.html' },
+  { icon: 'ℹ️', title: "À propos de Pepi'Tech", url: 'a-propos.html' },
 ];
 
 if (searchInput && searchResults) {
@@ -139,18 +148,37 @@ if (searchInput && searchResults) {
 
 // Filtres sélection
 const filterBtns = document.querySelectorAll('.filter-btn');
+
+function applyFilter(filter) {
+  filterBtns.forEach(b => b.classList.remove('active'));
+  const activeBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+  if (activeBtn) activeBtn.classList.add('active');
+  document.querySelectorAll('.bike-card').forEach(card => {
+    if (filter === 'all' || card.dataset.cat === filter) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+// Fonction globale appelée depuis les liens nav (onclick)
+window.navFilter = function(filter) {
+  applyFilter(filter);
+  const selector = filter === 'all'
+    ? '.bike-card'
+    : `.bike-card[data-cat="${filter}"]`;
+  const firstCard = document.querySelector(selector);
+  const target = firstCard || document.getElementById('selection');
+  if (target) {
+    const top = target.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
+};
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', function() {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    const filter = this.dataset.filter;
-    document.querySelectorAll('.bike-card').forEach(card => {
-      if (filter === 'all' || card.dataset.cat === filter) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
+    applyFilter(this.dataset.filter);
   });
 });
 
