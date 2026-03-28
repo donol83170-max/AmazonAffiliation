@@ -83,7 +83,7 @@ function applyTheme(theme) {
   if (themeIcon) themeIcon.textContent = theme === 'light' ? '☀️' : '🌙';
 }
 
-const savedTheme = localStorage.getItem('pepitech-theme') || 'dark';
+const savedTheme = localStorage.getItem('pepitech-theme') || 'light';
 applyTheme(savedTheme);
 
 if (themeToggle) {
