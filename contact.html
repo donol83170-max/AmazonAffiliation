@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Pepi'Tech</title>
   <meta name="description" content="Contactez l'équipe Pepi'Tech pour toute question, suggestion de test produit ou partenariat.">
-  <link rel="canonical" href="https://pepitech.fr/contact.html">
+  <link rel="canonical" href="https://donol83170-max.github.io/AmazonAffiliation/contact.html">
   <meta name="theme-color" content="#FF9900">
   <link rel="manifest" href="manifest.json">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Contact — Pepi'Tech">
   <meta property="og:description" content="Contactez l'équipe Pepi'Tech pour toute question ou suggestion de test produit.">
-  <meta property="og:url" content="https://pepitech.fr/contact.html">
+  <meta property="og:url" content="https://donol83170-max.github.io/AmazonAffiliation/contact.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -190,9 +190,9 @@
       <!-- Honeypot anti-spam -->
       <input type="text" name="_gotcha" style="display:none">
       <input type="hidden" name="_subject" value="Nouveau message Pepi'Tech">
-      <input type="hidden" name="_next" value="https://pepitech.fr/contact.html?sent=true">
+      <input type="hidden" name="_next" value="https://donol83170-max.github.io/AmazonAffiliation/contact.html?sent=true">
 
-      <button type="submit" class="form-submit">Envoyer le message →</button>
+      <button type="submit" class="form-submit" id="formSubmitBtn">Envoyer le message →</button>
       <p class="form-note">Vos données sont utilisées uniquement pour répondre à votre message. <a href="confidentialite.html" style="color:var(--orange);">Politique de confidentialité</a></p>
     </form>
 
@@ -208,5 +208,16 @@
 </footer>
 
 <script src="scripts.js"></script>
+<script>
+  const contactForm = document.querySelector('.contact-form');
+  const submitBtn = document.getElementById('formSubmitBtn');
+  if (contactForm && submitBtn) {
+    contactForm.addEventListener('submit', function() {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours…';
+      submitBtn.style.opacity = '0.7';
+    });
+  }
+</script>
 </body>
 </html>

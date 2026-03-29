@@ -209,9 +209,31 @@ if (stars.length) {
   });
 }
 
-// Service Worker PWA
+// Bannière RGPD — masquer si déjà acceptée
+(function() {
+  const banner = document.getElementById('rgpdBanner');
+  if (banner && localStorage.getItem('rgpd-ok') === '1') {
+    banner.style.display = 'none';
+  }
+})();
+
+// Gestion paramètre ?cat= depuis les articles
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat');
+  if (cat) {
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        window.navFilter(cat);
+      }, 300);
+    });
+  }
+})();
+
+// Service Worker PWA — chemin relatif pour GitHub Pages
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    const swPath = location.pathname.replace(/\/[^/]*$/, '/sw.js');
+    navigator.serviceWorker.register(swPath).catch(() => {});
   });
 }
